@@ -195,10 +195,10 @@ h2{margin:18px 0 0;font:600 clamp(2.2rem,4.4vw,4.1rem)/1.03 var(--f-display);let
 @keyframes dot{0%,60%,100%{opacity:.3}30%{opacity:.9}}
 .pain h2{font-size:clamp(1.9rem,3.2vw,3rem)}
 
-/* ---------- S2: services ---------- */
+/* ---------- S2: services, each one shown working as a live mockup ---------- */
 .svc-head{max-width:760px;margin:0 auto;text-align:center}
-.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2vw,28px);margin-top:clamp(48px,7vh,80px)}
-.svc{position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--panel);border:1px solid var(--hair);border-radius:22px;transition:border-color .45s var(--ease-out)}
+.svc-list{display:flex;flex-direction:column;gap:clamp(24px,3.5vw,48px);margin-top:clamp(48px,7vh,80px)}
+.svc{position:relative;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:center;gap:clamp(24px,4vw,64px);padding:clamp(12px,1.3vw,18px);background:var(--panel);border:1px solid var(--hair);border-radius:28px;transition:border-color .45s var(--ease-out)}
 .svc:hover{border-color:rgba(190,255,60,.35)}
 .svc::before{content:"";position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;box-shadow:inset 0 1px 0 rgba(190,255,60,.5);opacity:.25}
 .live .svc::before{animation:glow 7s ease-in-out infinite alternate}
@@ -206,14 +206,165 @@ h2{margin:18px 0 0;font:600 clamp(2.2rem,4.4vw,4.1rem)/1.03 var(--f-display);let
 .live .svc:nth-child(2)::before{animation-delay:-3.3s}
 .live .svc:nth-child(3)::before{animation-delay:-5.6s}
 @keyframes glow{from{opacity:.15}to{opacity:.7}}
-.svc-img{position:relative;aspect-ratio:4/3;overflow:hidden}
-.svc-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.07);transition:transform 1.8s var(--ease-out)}
-.in .svc-img img{transform:scale(1)}
-.svc-img::after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(rgba(16,35,26,0),var(--panel))}
-.svc-body{padding:24px 28px 32px}
+.svc-rev .svc-img{order:2}
+.svc-img{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:18px;container-type:inline-size;background:radial-gradient(ellipse 70% 60% at 50% 58%,rgba(180,255,0,.09),rgba(180,255,0,0) 70%),linear-gradient(180deg,#122519,#0b1a12)}
+.svc-body{padding:clamp(4px,1.2vw,20px) clamp(8px,1.4vw,24px) clamp(8px,1.2vw,20px) 0}
+.svc-rev .svc-body{padding-left:clamp(8px,1.4vw,24px);padding-right:0}
 .num{font:400 .78rem/1 var(--f-mono);letter-spacing:.14em;color:var(--text-secondary)}
-.svc h3{margin:12px 0 12px;font:600 clamp(1.5rem,2vw,1.85rem)/1.1 var(--f-display)}
-.svc p{color:var(--text-secondary)}
+.svc h3{margin:14px 0 14px;font:600 clamp(1.7rem,2.6vw,2.4rem)/1.08 var(--f-display);letter-spacing:-.01em}
+.svc p{max-width:40ch;color:var(--text-secondary)}
+.svc-tags{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.svc-tags li{padding:8px 12px;border:1px solid var(--line-strong);border-radius:999px;font:400 .76rem/1 var(--f-mono);letter-spacing:.04em;color:var(--text-secondary)}
+
+/* Shared mockup scale: everything inside is sized in em, 27em = the mockup width */
+.mk{position:absolute;inset:0;font-size:13px;font-size:calc(100cqw / 27);line-height:1.25;color:var(--text-primary);pointer-events:none}
+.mk-cursor{position:absolute;left:0;top:0;z-index:6;width:1.3em;height:1.3em;opacity:0;filter:drop-shadow(0 .15em .25em rgba(0,0,0,.35))}
+
+/* 01 Web: search, find the business, open the site, book */
+.br{position:absolute;inset:1.2em;overflow:hidden;border-radius:.7em;background:#f4f2ee;box-shadow:0 1.4em 2.8em rgba(0,0,0,.5),0 0 0 1px rgba(232,240,228,.08)}
+.br-bar{position:absolute;left:0;right:0;top:0;height:1.6em;display:flex;align-items:center;gap:.3em;padding:0 .7em;background:#e3e0da}
+.br-bar>i{width:.45em;height:.45em;border-radius:50%;background:#c2beb6}
+.br-url{display:grid;align-items:center;width:11em;height:1.05em;margin-left:.7em;padding-left:.8em;border-radius:.55em;background:#f4f2ee}
+.br-url span{grid-area:1/1;font:400 .5em/1 var(--f-mono);color:#5f6672;white-space:nowrap}
+.u1{opacity:0}
+.br-view{position:absolute;left:0;right:0;top:1.6em;bottom:0;overflow:hidden}
+.s-search{position:absolute;inset:0;background:#fbfaf8;opacity:0}
+.s-box{position:absolute;left:1.2em;top:1.1em;width:15em;height:2em;display:flex;align-items:center;padding-left:.9em;border:1px solid #dcd8d1;border-radius:1em;background:#fff}
+.s-box span{font:400 .72em/1 var(--f-body);color:#1d2520;white-space:nowrap}
+.s-cover{position:absolute;left:.85em;top:.3em;bottom:.3em;width:7.6em;background:#fff;transform-origin:right;transform:scaleX(0)}
+.s-res{position:absolute;left:1.2em;width:16em}
+.s-r1{top:4.1em;margin-left:-.6em;padding:.45em .6em;border-radius:.5em}
+.s-r1::before{content:"";position:absolute;inset:0;border-radius:inherit;background:rgba(180,255,0,.3);opacity:0}
+.s-r1 span{position:relative;display:block}
+.s-url{font:400 .5em/1.5 var(--f-mono);color:#5f6672}
+.s-title{font:600 .82em/1.3 var(--f-body);color:#16452a}
+.s-meta{font:400 .56em/1.6 var(--f-body);color:#5f6672}
+.s-meta b{font-weight:400;color:#c98f00;letter-spacing:.05em}
+.s-r2{top:8.4em}.s-r3{top:11.4em}
+.s-r2 i,.s-r3 i{display:block;height:.34em;margin-bottom:.45em;border-radius:.2em;background:#e3e0da}
+.s-r2 i:nth-child(1),.s-r3 i:nth-child(1){width:5em}
+.s-r2 i:nth-child(2),.s-r3 i:nth-child(2){width:11em;height:.5em;background:#d5d1ca}
+.s-r2 i:nth-child(3),.s-r3 i:nth-child(3){width:14em}
+.s-site{position:absolute;inset:0;background:#f4f2ee}
+.w2-nav{position:absolute;left:0;right:0;top:0;height:2.4em;display:flex;align-items:center;gap:.6em;padding:0 1.2em;border-bottom:1px solid #e0ddd6}
+.w2-logo{width:1.1em;height:1.1em;border-radius:.3em;background:#0b1a12}
+.w2-name{font:600 .78em/1 var(--f-display);color:#0b1a12}
+.w2-links{display:flex;gap:.5em;margin-left:auto}
+.w2-links i{width:1.6em;height:.28em;border-radius:.2em;background:#c9c5bd}
+.w2-cta{padding:.45em .8em;border-radius:1em;background:#0b1a12;color:#f4f2ee;font:500 .55em/1 var(--f-body)}
+.w2-h{position:absolute;left:1.4em;top:3.5em;width:12.2em}
+.w2-h span{display:block;font:600 1.7em/1.02 var(--f-display);letter-spacing:-.01em;color:#0b1a12}
+.w2-l{position:absolute;left:1.4em;top:7.7em;width:10em;height:.34em;border-radius:.2em;background:#cfcbc4}
+.w2-l2{top:8.4em;width:7.4em}
+.w2-btn{position:absolute;left:1.4em;top:9.6em;width:7.2em;height:2em;display:grid;place-items:center;border-radius:.55em;background:#b4ff00}
+.w2-btn span{font:600 .66em/1 var(--f-body);color:#0b1a12}
+.w2-img{position:absolute;right:1.4em;top:3.5em;width:8.4em;height:7.9em;border-radius:.7em;background:radial-gradient(circle at 50% 48%,rgba(214,255,120,.95) 0 10%,rgba(180,255,0,.3) 24%,rgba(180,255,0,0) 48%),linear-gradient(160deg,#1d3a26,#0b1a12 72%)}
+.w2-cards{position:absolute;left:1.4em;right:1.4em;top:12.4em;height:2.6em;display:grid;grid-template-columns:repeat(3,1fr);gap:.6em}
+.w2-cards i{border-radius:.5em;background:#e5e1db}
+.w2-toast{position:absolute;right:1em;top:2.9em;display:flex;align-items:center;gap:.6em;padding:.6em .85em;border-radius:.7em;background:#0b1a12;color:#e8f0e4;box-shadow:0 .8em 1.6em rgba(0,0,0,.3)}
+.w2-toast b{flex:none;width:.6em;height:.6em;border-radius:50%;background:#b4ff00;box-shadow:0 0 .6em #b4ff00}
+.w2-toast span{font:400 .6em/1.35 var(--f-body)}
+.w2-toast strong{display:block;font-weight:600;color:#fff}
+.live .mk-web .s-search{animation:mkSearch 12s linear infinite both}
+.live .mk-web .s-cover{animation:mkType 12s linear infinite both}
+.live .mk-web .s-res{animation:mkRes 12s var(--ease-out) infinite both}
+.live .mk-web .s-r2{animation-delay:.15s}
+.live .mk-web .s-r3{animation-delay:.3s}
+.live .mk-web .s-r1::before{animation:mkPick 12s linear infinite both}
+.live .mk-web .s-site{animation:mkSite 12s var(--ease-in-out) infinite both}
+.live .mk-web .u1{animation:mkU1 12s linear infinite both}
+.live .mk-web .u2{animation:mkU2 12s linear infinite both}
+.live .mk-web .w2-btn{animation:mkBtn 12s linear infinite both}
+.live .mk-web .w2-toast{animation:mkToast 12s var(--ease-out) infinite both}
+.live .mk-web .mk-cursor{animation:mkCur 12s var(--ease-in-out) infinite both}
+@keyframes mkSearch{0%{opacity:0}3%,38%{opacity:1}46%,100%{opacity:0}}
+@keyframes mkType{0%,6%{transform:scaleX(1);animation-timing-function:steps(18,end)}22%,100%{transform:scaleX(0)}}
+@keyframes mkRes{0%,22%{opacity:0;transform:translateY(.5em)}27%,100%{opacity:1;transform:none}}
+@keyframes mkPick{0%,33%{opacity:0}35%,42%{opacity:1}48%,100%{opacity:0}}
+@keyframes mkSite{0%,38%{transform:translateY(102%);opacity:1}47%,90%{transform:translateY(0);opacity:1}96%,100%{transform:translateY(0);opacity:0}}
+@keyframes mkU1{0%,42%{opacity:1}46%,100%{opacity:0}}
+@keyframes mkU2{0%,42%{opacity:0}46%,92%{opacity:1}97%,100%{opacity:0}}
+@keyframes mkBtn{0%,58%{transform:scale(1)}60%{transform:scale(.9)}63%,100%{transform:scale(1)}}
+@keyframes mkToast{0%,62%{opacity:0;transform:translateY(-.8em) scale(.96)}67%,90%{opacity:1;transform:none}96%,100%{opacity:0;transform:none}}
+@keyframes mkCur{0%,24%{opacity:0;transform:translate(16em,12em)}27%{opacity:1;transform:translate(16em,12em)}33%{transform:translate(4em,5.3em) scale(1)}35%{transform:translate(4em,5.3em) scale(.8)}37%{transform:translate(4em,5.3em) scale(1)}47%{opacity:1;transform:translate(14em,13em)}57%{transform:translate(4.7em,10.4em) scale(1)}59.5%{transform:translate(4.7em,10.4em) scale(.8)}62%{opacity:1;transform:translate(4.7em,10.4em) scale(1)}72%,100%{opacity:0;transform:translate(4.7em,10.4em)}}
+
+/* 02 App: a live panel, a new booking arrives */
+.ap{position:absolute;inset:1.2em;overflow:hidden;border:1px solid rgba(232,240,228,.08);border-radius:.7em;background:#0a170f;box-shadow:0 1.4em 2.8em rgba(0,0,0,.5)}
+.ap-bar{position:absolute;left:0;right:0;top:0;height:1.6em;display:flex;align-items:center;gap:.3em;padding:0 .7em;border-bottom:1px solid rgba(232,240,228,.06);background:#10231a}
+.ap-bar>i{width:.45em;height:.45em;border-radius:50%;background:#3a4a3f}
+.ap-bar span{margin-left:.8em;font:400 .5em/1 var(--f-mono);letter-spacing:.08em;color:var(--text-secondary)}
+.ap-side{position:absolute;left:0;top:1.6em;bottom:0;width:2.4em;display:flex;flex-direction:column;align-items:center;gap:.8em;padding-top:1em;border-right:1px solid rgba(232,240,228,.06)}
+.ap-side i{width:.95em;height:.95em;border:1.5px solid #5c7062;border-radius:.3em}
+.ap-side i.on{border-color:#b4ff00;background:rgba(180,255,0,.15)}
+.ap-main{position:absolute;left:2.4em;right:0;top:1.6em;bottom:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:.6em;padding:.8em}
+.ap-stats{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,1fr);gap:.6em}
+.ap-stat{position:relative;padding:.55em .7em;border:1px solid rgba(232,240,228,.06);border-radius:.55em;background:#122519}
+.ap-stat.hot::after{content:"";position:absolute;inset:-1px;border:1px solid #b4ff00;border-radius:inherit;box-shadow:0 0 .8em rgba(180,255,0,.35);opacity:0}
+.ap-lab{display:block;font:400 .44em/1.2 var(--f-mono);letter-spacing:.1em;color:var(--text-secondary)}
+.val,.odo{display:block;height:1em;margin-top:.3em;overflow:hidden;font:600 1.15em/1 var(--f-display)}
+.odo-in{display:block;transform:translateY(-50%)}
+.odo-in b{display:block;height:1em;font-weight:600}
+.ap-chart,.ap-list{position:relative;overflow:hidden;padding:.6em .7em;border:1px solid rgba(232,240,228,.06);border-radius:.55em;background:#122519}
+.bars{position:absolute;left:.7em;right:.7em;top:1.9em;bottom:1.7em;display:flex;align-items:flex-end;gap:.4em}
+.bars i{flex:1;height:100%;border-radius:.25em .25em 0 0;background:#2a4a33;transform-origin:bottom;transform:scaleY(var(--h))}
+.bars i.today{--h:.92;background:#b4ff00}
+.days{position:absolute;left:.7em;right:.7em;bottom:.6em;display:flex;gap:.4em}
+.days span{flex:1;text-align:center;font:400 .44em/1 var(--f-mono);color:var(--text-secondary)}
+.rows{position:absolute;left:.7em;right:.7em;top:1.8em;bottom:.5em;overflow:hidden}
+.row{display:flex;align-items:center;gap:.5em;height:1.75em;margin-bottom:.3em;padding:0 .5em;border:1px solid rgba(232,240,228,.05);border-radius:.45em;background:#0f2016}
+.row .t{flex:none;font:400 .5em/1 var(--f-mono);color:var(--text-secondary)}
+.row .n{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font:500 .56em/1 var(--f-body)}
+.row .tag{flex:none;margin-left:auto;padding:.3em .45em;border-radius:.35em;background:rgba(180,255,0,.18);color:#d9ff8c;font:400 .4em/1 var(--f-mono);letter-spacing:.08em}
+.row.new{border-color:rgba(190,255,60,.55)}
+.live .mk-app .row{animation:apShift 10s var(--ease-out) infinite both}
+.live .mk-app .row.new{animation:apNew 10s var(--ease-out) infinite both}
+.live .mk-app .odo-in{animation:apOdo 10s var(--ease-out) infinite both}
+.live .mk-app .bars i.today{animation:apBar 10s var(--ease-out) infinite both}
+.live .mk-app .ap-stat.hot::after{animation:apHot 10s ease-out infinite both}
+@keyframes apShift{0%,28%{transform:translateY(-2.05em)}34%,90%{transform:none}97%,100%{transform:translateY(-2.05em)}}
+@keyframes apNew{0%,28%{opacity:0;transform:translateY(-.6em) scale(.97)}34%,90%{opacity:1;transform:none}96%,100%{opacity:0;transform:none}}
+@keyframes apOdo{0%,30%{transform:translateY(0)}36%,90%{transform:translateY(-50%)}97%,100%{transform:translateY(0)}}
+@keyframes apBar{0%,30%{transform:scaleY(.62)}38%,90%{transform:scaleY(.92)}97%,100%{transform:scaleY(.62)}}
+@keyframes apHot{0%,30%{opacity:0}34%{opacity:1}52%,100%{opacity:0}}
+
+/* 03 AI agent: a customer writes at 23:47 and gets an answer */
+.ph{--k:1;position:absolute;left:50%;top:.85em;z-index:1;display:flex;flex-direction:column;width:10.6em;height:19.3em;margin-left:-5.3em;overflow:hidden;font-size:calc(var(--k) * 1em);border:.32em solid #16291e;border-radius:1.5em;background:#08140d;box-shadow:0 1.4em 2.8em rgba(0,0,0,.5)}
+.ph-st{display:flex;align-items:center;justify-content:space-between;padding:.55em .9em .3em}
+.ph-st span{font:500 .5em/1 var(--f-body)}
+.ph-st i{width:1.2em;height:.4em;border-radius:.2em;background:#5c7062}
+.ph-head{display:flex;align-items:center;gap:.5em;padding:.45em .7em;border-bottom:1px solid rgba(232,240,228,.06);background:#10231a}
+.ph-head .av{flex:none;width:1.5em;height:1.5em;border-radius:50%;background:radial-gradient(circle at 35% 35%,#eaffb0,#b4ff00 55%,#4f7a00)}
+.ph-head strong{display:block;font:600 .56em/1.2 var(--f-body)}
+.ph-head em{display:block;font:normal 400 .44em/1.3 var(--f-mono);color:#8fd6a8}
+.ph-body{flex:1;display:flex;flex-direction:column;gap:.45em;padding:.7em .6em}
+.bub{max-width:84%;padding:.45em .6em;border-radius:.75em}
+.bub span{display:block;font:400 .56em/1.35 var(--f-body)}
+.bub.u{align-self:flex-end;border-bottom-right-radius:.2em;background:#b4ff00;color:#0b1a12}
+.slot{position:relative;align-self:flex-start;max-width:84%}
+.slot .bub{max-width:100%}
+.bub.a{border-bottom-left-radius:.2em;background:#16291e}
+.bub-typing{position:absolute;left:0;top:0;display:flex;gap:.22em;padding:.55em .65em;border-radius:.75em;border-bottom-left-radius:.2em;background:#16291e;opacity:0}
+.bub-typing i{width:.34em;height:.34em;border-radius:50%;background:var(--text-secondary)}
+.ph-in{display:flex;align-items:center;gap:.5em;margin:.5em;padding:.45em .7em;border-radius:1em;background:#10231a}
+.ph-in span{flex:1;font:400 .5em/1 var(--f-body);color:var(--text-secondary)}
+.ph-in i{width:1.1em;height:1.1em;border-radius:50%;background:#b4ff00}
+.ia-chip{position:absolute;z-index:2;display:flex;align-items:center;gap:.5em;padding:.55em .8em;border:1px solid rgba(232,240,228,.12);border-radius:.7em;background:rgba(16,35,26,.94);box-shadow:0 .8em 1.6em rgba(0,0,0,.35)}
+.ia-chip b{flex:none;width:.55em;height:.55em;border-radius:50%;background:#b4ff00;box-shadow:0 0 .6em rgba(180,255,0,.8)}
+.ia-chip span{white-space:nowrap;font:400 .55em/1 var(--f-mono);letter-spacing:.04em}
+.ia-chip.c1{left:1em;top:3.2em}
+.ia-chip.c2{right:1em;bottom:3.4em}
+.live .mk-ia .bub-typing i{animation:bob 1.2s ease-in-out infinite}
+.live .mk-ia .bub-typing i:nth-child(2){animation-delay:-.9s}
+.live .mk-ia .bub-typing i:nth-child(3){animation-delay:-.6s}
+.live .mk-ia .ia-m1{animation:m1 15s var(--ease-out) infinite .3s both}
+.live .mk-ia .ia-t1{animation:t1 15s linear infinite .3s both}
+.live .mk-ia .ia-m2{animation:m2 15s var(--ease-out) infinite .3s both}
+.live .mk-ia .ia-m3{animation:m3 15s var(--ease-out) infinite .3s both}
+.live .mk-ia .ia-t2{animation:t2 15s linear infinite .3s both}
+.live .mk-ia .ia-m4{animation:m4 15s var(--ease-out) infinite .3s both}
+.live .mk-ia .ia-chip.c1{animation:chipFloat 6s ease-in-out infinite alternate -1s}
+.live .mk-ia .ia-chip.c2{animation:m2 15s var(--ease-out) infinite .8s both}
+@keyframes chipFloat{from{transform:translateY(0)}to{transform:translateY(-.35em)}}
 
 /* ---------- S3: build your box (a real 3D box, each side is a button) ---------- */
 .build-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"cube head" "cube actions";column-gap:clamp(40px,6vw,96px);align-items:center}
@@ -466,7 +617,13 @@ textarea.inp{min-height:96px;resize:vertical}
 /* ---------- Responsive ---------- */
 @media (max-width:900px){
   .pain .grid,.about .grid,.contact .grid,.work-head,.feat{grid-template-columns:1fr}
-  .svc-grid{grid-template-columns:1fr}
+  .svc{grid-template-columns:1fr;border-radius:22px}
+  .svc-rev .svc-img{order:0}
+  .svc-body,.svc-rev .svc-body{padding:4px 8px 12px}
+  .svc-img.is-ia{aspect-ratio:3/4}
+  .svc-img.is-ia .ph{--k:1.7;top:.9em}
+  .svc-img.is-ia .ia-chip.c1{display:none}
+  .svc-img.is-ia .ia-chip.c2{font-size:1.3em;right:.6em;bottom:4.2em}
   .build-grid{grid-template-columns:1fr;grid-template-areas:"head" "cube" "actions"}
   .build-head,.build-actions{text-align:center}
   .build-head .lede{margin-inline:auto}
@@ -495,7 +652,6 @@ textarea.inp{min-height:96px;resize:vertical}
   *,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important}
   .js [data-reveal] .rv{opacity:1;transform:none}
   .sig path{stroke-dashoffset:0}
-  .svc-img img{transform:none}
 }
 </style>
 </head>
@@ -580,31 +736,104 @@ textarea.inp{min-height:96px;resize:vertical}
         <p class="kicker rv"><svg class="sig" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" d="M14 3 25 9v11l-11 6-11-6V9z"/><path pathLength="1" d="M3 9l11 6 11-6"/><path pathLength="1" d="M14 15v11"/></svg>Servicios</p>
         <h2 class="rv" id="servicios-t">Lo que va dentro de la caja.</h2>
       </div>
-      <div class="svc-grid">
+      <div class="svc-list">
+
         <article class="svc rv">
-          <div class="svc-img"><img src="assets/servicio-web.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async"></div>
+          <div class="svc-img">
+            <div class="mk mk-web" aria-hidden="true">
+              <div class="br">
+                <div class="br-bar"><i></i><i></i><i></i><div class="br-url"><span class="u1">google.com</span><span class="u2">tunegocio.es</span></div></div>
+                <div class="br-view">
+                  <div class="s-search">
+                    <div class="s-box"><span>peluquería en Reus</span><i class="s-cover"></i></div>
+                    <div class="s-res s-r1"><span class="s-url">tunegocio.es</span><span class="s-title">Tu negocio · Peluquería en Reus</span><span class="s-meta"><b>★★★★★</b> 4,9 · Abierto ahora</span></div>
+                    <div class="s-res s-r2"><i></i><i></i><i></i></div>
+                    <div class="s-res s-r3"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="s-site">
+                    <div class="w2-nav"><i class="w2-logo"></i><span class="w2-name">Tu negocio</span><span class="w2-links"><i></i><i></i><i></i></span><span class="w2-cta">Reservar</span></div>
+                    <div class="w2-h"><span>Tu cita en un minuto.</span></div>
+                    <i class="w2-l"></i><i class="w2-l w2-l2"></i>
+                    <div class="w2-btn"><span>Reservar cita</span></div>
+                    <div class="w2-img"></div>
+                    <div class="w2-cards"><i></i><i></i><i></i></div>
+                    <div class="w2-toast"><b></b><span><strong>Nueva reserva</strong>Laura · hoy 17:30</span></div>
+                  </div>
+                  <svg class="mk-cursor" viewBox="0 0 20 20"><path d="M4 2l12 8-5.5 1.2L13 17l-2.4 1-2.5-5.8L4 16z" fill="#0b1a12" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="svc-body">
             <p class="num">01</p>
             <h3>Webs que traen clientes.</h3>
             <p>Rápidas, claras y pensadas para que te llamen o te escriban. Cada página tiene un solo objetivo y está lista para aparecer en Google.</p>
+            <ul class="svc-tags"><li>Lista para Google</li><li>Perfecta en el móvil</li><li>Reservas y contacto</li></ul>
           </div>
         </article>
-        <article class="svc rv">
-          <div class="svc-img"><img src="assets/servicio-app.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async"></div>
+
+        <article class="svc svc-rev rv">
+          <div class="svc-img">
+            <div class="mk mk-app" aria-hidden="true">
+              <div class="ap">
+                <div class="ap-bar"><i></i><i></i><i></i><span>Tu app · Panel</span></div>
+                <div class="ap-side"><i class="on"></i><i></i><i></i><i></i></div>
+                <div class="ap-main">
+                  <div class="ap-stats">
+                    <div class="ap-stat hot"><span class="ap-lab">RESERVAS HOY</span><span class="odo"><span class="odo-in"><b>12</b><b>13</b></span></span></div>
+                    <div class="ap-stat"><span class="ap-lab">PEDIDOS</span><span class="val">5</span></div>
+                    <div class="ap-stat"><span class="ap-lab">CLIENTES</span><span class="val">248</span></div>
+                  </div>
+                  <div class="ap-chart"><span class="ap-lab">RESERVAS · SEMANA</span>
+                    <div class="bars"><i style="--h:.38"></i><i style="--h:.52"></i><i style="--h:.44"></i><i style="--h:.68"></i><i style="--h:.58"></i><i style="--h:.8"></i><i class="today"></i></div>
+                    <div class="days"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                  </div>
+                  <div class="ap-list"><span class="ap-lab">PRÓXIMAS CITAS</span>
+                    <div class="rows">
+                      <div class="row new"><span class="t">17:30</span><span class="n">Ana · Uñas</span><span class="tag">NUEVA</span></div>
+                      <div class="row"><span class="t">10:00</span><span class="n">Laura · Corte</span></div>
+                      <div class="row"><span class="t">12:30</span><span class="n">Marc · Color</span></div>
+                      <div class="row"><span class="t">16:00</span><span class="n">Sara · Peinado</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="svc-body">
             <p class="num">02</p>
             <h3>Aplicaciones web a medida.</h3>
             <p>Reservas, pedidos, fichas de clientes, paneles. La herramienta exacta que tu negocio necesita, sin pagar licencias por cosas que no usas.</p>
+            <ul class="svc-tags"><li>Reservas</li><li>Pedidos</li><li>Paneles</li></ul>
           </div>
         </article>
+
         <article class="svc rv">
-          <div class="svc-img"><img src="assets/servicio-ia.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async"></div>
+          <div class="svc-img is-ia">
+            <div class="mk mk-ia" aria-hidden="true">
+              <div class="ia-chip c1"><b></b><span>Cerrado · 23:47</span></div>
+              <div class="ph">
+                <div class="ph-st"><span>23:47</span><i></i></div>
+                <div class="ph-head"><i class="av"></i><div><strong>Tu negocio</strong><em>Asistente IA · en línea</em></div></div>
+                <div class="ph-body">
+                  <div class="bub u ia-m1"><span>¿Abrís el sábado?</span></div>
+                  <div class="slot"><div class="bub-typing ia-t1"><i></i><i></i><i></i></div><div class="bub a ia-m2"><span>Sí, de 9:00 a 14:00. ¿Te reservo hora?</span></div></div>
+                  <div class="bub u ia-m3"><span>Sí, a las 11 porfa.</span></div>
+                  <div class="slot"><div class="bub-typing ia-t2"><i></i><i></i><i></i></div><div class="bub a ia-m4"><span>Hecho: sábado a las 11:00. Te aviso el viernes. ✓</span></div></div>
+                </div>
+                <div class="ph-in"><span>Escribe un mensaje</span><i></i></div>
+              </div>
+              <div class="ia-chip c2"><b></b><span>Respuesta en 3 s</span></div>
+            </div>
+          </div>
           <div class="svc-body">
             <p class="num">03</p>
             <h3>Agentes de IA.</h3>
             <p>Contestan a tus clientes por WhatsApp o en tu web a cualquier hora, con tus precios y tus horarios. Lo que no saben resolver, te lo pasan a ti.</p>
+            <ul class="svc-tags"><li>WhatsApp y web</li><li>24 horas</li><li>Te pasa lo que no sabe</li></ul>
           </div>
         </article>
+
       </div>
     </div>
   </section>
