@@ -595,12 +595,67 @@ textarea.inp{min-height:96px;resize:vertical}
 .pick input:focus-visible+span{outline:2px solid var(--focus);outline-offset:3px}
 @media (pointer:coarse){.pick span{min-height:44px}}
 .micro{margin-top:14px;font-size:.9rem;color:var(--text-secondary)}
-.success{display:none}
-.form-card.sent form{display:none}
-.form-card.sent .success{display:block;animation:qa .6s var(--ease-out)}
-.success h3{margin:0 0 12px;font:600 clamp(1.5rem,2.4vw,2rem)/1.15 var(--f-display)}
-.success p{color:var(--text-secondary)}
-.success a{color:var(--text-primary);text-underline-offset:4px}
+/* ---------- S8b: request form in steps (same tokens as the rest of the page) ---------- */
+.contact .grid>div:first-child{position:sticky;top:110px}
+.wa-alt{margin-top:28px}
+.prog{margin:0 0 30px}
+.prog-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:12px}
+.prog-label{font:400 .75rem/1 var(--f-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--text-secondary)}
+.prog-name{font:600 1.15rem/1.2 var(--f-display);color:var(--text-primary)}
+.prog-track{position:relative;height:2px;border-radius:2px;background:var(--hair);overflow:hidden}
+.prog-track span{position:absolute;inset:0;background:var(--accent);box-shadow:0 0 12px rgba(180,255,0,.45);transform-origin:left;transform:scaleX(var(--p,.3333));transition:transform .7s var(--ease-out)}
+.prog-dots{display:flex;justify-content:space-between;margin:12px 0 0;padding:0;list-style:none;font:400 .7rem/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
+.prog-dots li[aria-current="step"]{color:var(--accent)}
+.prog-dots li.done{color:var(--text-primary)}
+.step-pane{border:0;margin:0;padding:0;min-width:0}
+.js .step-pane[hidden]{display:none}
+.step-pane.enter{animation:qa .55s var(--ease-out)}
+.step-title{margin:0 0 22px;font:600 clamp(1.35rem,2vw,1.7rem)/1.15 var(--f-display);outline:none}
+.hint{margin:-2px 0 10px;font-size:.9rem;color:var(--text-secondary)}
+.svc-picks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.svc-pick{position:relative;display:block}
+.svc-pick input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer;z-index:1}
+.svc-pick .card{position:relative;display:flex;flex-direction:column;gap:6px;height:100%;padding:16px 44px 16px 16px;border:1.5px dashed rgba(232,240,228,.32);border-radius:14px;background:rgba(232,240,228,.03);transition:border-color .45s var(--ease-out),background-color .45s var(--ease-out),box-shadow .6s var(--ease-out)}
+.svc-pick .card b{font:600 1.1rem/1.15 var(--f-display);color:var(--text-primary)}
+.svc-pick .card small{font-size:.88rem;line-height:1.4;color:var(--text-secondary)}
+.svc-pick .card i{position:absolute;top:14px;right:14px;width:20px;height:20px;border:1px solid var(--line-strong);border-radius:50%;transition:border-color .35s var(--ease-out)}
+.svc-pick .card i::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--accent);transform:scale(0);transition:transform .45s var(--ease-out)}
+.svc-pick input:hover+.card{border-color:rgba(232,240,228,.7);background-color:rgba(180,255,0,.06)}
+.svc-pick input:checked+.card{border-style:solid;border-color:rgba(190,255,60,.95);background:rgba(180,255,0,.08);box-shadow:inset 0 0 2.2em rgba(180,255,0,.1)}
+.svc-pick input:checked+.card i{border-color:rgba(190,255,60,.95)}
+.svc-pick input:checked+.card i::after{transform:none}
+.svc-pick input:focus-visible+.card{outline:2px solid var(--focus);outline-offset:3px}
+.picks[data-invalid] .svc-pick .card,.picks[data-invalid] .pick span{border-color:#e08585}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 14px}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.check{position:relative;display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-size:.95rem;line-height:1.5;color:var(--text-secondary)}
+.check input{position:absolute;opacity:0;width:22px;height:22px;margin:0;cursor:pointer}
+.check .box{flex:none;position:relative;width:22px;height:22px;margin-top:1px;border:1px solid var(--line-strong);border-radius:6px;background:rgba(6,15,10,.7);transition:border-color .3s var(--ease-out),background-color .3s var(--ease-out)}
+.check .box::after{content:"";position:absolute;left:7px;top:3px;width:6px;height:11px;border:solid var(--accent-ink);border-width:0 2px 2px 0;transform:rotate(45deg) scale(0);transition:transform .35s var(--ease-out)}
+.check input:checked+.box{background:var(--accent);border-color:var(--accent)}
+.check input:checked+.box::after{transform:rotate(45deg)}
+.check input:focus-visible+.box{outline:2px solid var(--focus);outline-offset:3px}
+.check input[aria-invalid="true"]+.box{border-color:#e08585}
+.check a{color:var(--text-primary);text-underline-offset:4px}
+.nav-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}
+.nav-row .btn:only-child{margin-left:auto}
+.btn[aria-busy="true"]{pointer-events:none;opacity:.75}
+.btn .spin{display:none;width:16px;height:16px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:spin .8s linear infinite}
+.btn[aria-busy="true"] .spin{display:inline-block}
+.btn[aria-busy="true"] .arrow{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.form-err{margin-top:14px}
+.form-card .state{display:none}
+.form-card.is-sent form,.form-card.is-wa form,.form-card.is-error form{display:none}
+.form-card.is-sent .st-sent,.form-card.is-wa .st-wa,.form-card.is-error .st-error{display:block;animation:qa .6s var(--ease-out)}
+.state h3{margin:0 0 12px;font:600 clamp(1.5rem,2.4vw,2rem)/1.15 var(--f-display);outline:none}
+.state p{color:var(--text-secondary)}
+.state p+p{margin-top:10px}
+.state a:not(.btn){color:var(--text-primary);text-underline-offset:4px}
+.state .nav-row{margin-top:24px;justify-content:flex-start}
+@media (max-width:900px){.contact .grid>div:first-child{position:static}}
+@media (max-width:520px){.row2{grid-template-columns:1fr}.svc-picks{gap:8px}.svc-pick .card{padding:13px 34px 13px 13px}.svc-pick .card i{top:12px;right:10px;width:18px;height:18px}.svc-pick .card small{font-size:.82rem}.nav-row{flex-direction:column-reverse;align-items:stretch}.nav-row .btn{width:100%}}
+
 
 /* ---------- Footer ---------- */
 .foot{position:relative;padding:72px 0 40px;border-top:1px solid var(--hair)}
@@ -1019,48 +1074,201 @@ textarea.inp{min-height:96px;resize:vertical}
     </div>
   </section>
 
-  <!-- S8 · Contacto: la única llamada a la acción -->
+  <!-- S8 · Solicitud: la única llamada a la acción (sustituye al antiguo formulario de WhatsApp) -->
   <section class="sec contact live-scope" id="contacto" data-reveal aria-labelledby="contacto-t">
     <div class="bg" aria-hidden="true"></div>
     <div class="motes" aria-hidden="true"></div>
     <div class="wrap grid">
       <div>
-        <p class="kicker rv"><svg class="sig" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" d="M14 3 25 9v11l-11 6-11-6V9z"/><path pathLength="1" d="M3 9l11 6 11-6"/><path pathLength="1" d="M14 15v11"/></svg>Contacto</p>
+        <p class="kicker rv"><svg class="sig" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" d="M14 3 25 9v11l-11 6-11-6V9z"/><path pathLength="1" d="M3 9l11 6 11-6"/><path pathLength="1" d="M14 15v11"/></svg>Solicitud</p>
         <h2 class="rv" id="contacto-t">Cuéntame tu negocio.</h2>
-        <p class="lede rv">Tres datos y te respondo yo en persona.</p>
-        <p class="alt rv">¿Prefieres email? <a href="mailto:berbkarim@gmail.com">berbkarim@gmail.com</a></p>
+        <p class="lede rv">Tres pasos cortos. Con esto entiendo qué necesitas y te preparo un precio cerrado. Te respondo yo en persona.</p>
+        <div class="wa-alt rv">
+          <a class="btn btn-ghost" href="https://wa.me/34624092545" target="_blank" rel="noopener">Prefiero escribirte por WhatsApp</a>
+        </div>
+        <p class="alt rv">¿O mejor por email? <a href="mailto:berbkarim@gmail.com">berbkarim@gmail.com</a></p>
       </div>
+
       <div class="form-card rv" id="form-card">
-        <form id="form" novalidate>
-          <div class="field">
-            <label class="lab" for="f-nombre">Tu nombre</label>
-            <input class="inp" id="f-nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Ej. Laura" aria-describedby="err-nombre" required>
-            <p class="err" id="err-nombre"></p>
-          </div>
-          <div class="field">
-            <label class="lab" for="f-negocio">Tu negocio</label>
-            <input class="inp" id="f-negocio" name="negocio" type="text" autocomplete="organization" placeholder="Ej. Peluquería en Reus" aria-describedby="err-negocio" required>
-            <p class="err" id="err-negocio"></p>
-          </div>
-          <fieldset class="picks">
-            <legend class="lab">Qué te haría falta</legend>
-            <div class="pick-row">
-              <label class="pick"><input type="checkbox" name="pieza" value="Web"><span>Web</span></label>
-              <label class="pick"><input type="checkbox" name="pieza" value="App"><span>App</span></label>
-              <label class="pick"><input type="checkbox" name="pieza" value="Agente de IA"><span>Agente de IA</span></label>
-              <label class="pick"><input type="checkbox" name="pieza" value="Aún no lo sé"><span>Aún no lo sé</span></label>
+        <form id="form" novalidate aria-labelledby="contacto-t">
+          <div class="prog">
+            <div class="prog-top">
+              <p class="prog-label" id="prog-label" aria-live="polite">Paso 1 de 3</p>
+              <p class="prog-name" id="prog-name" aria-hidden="true">Qué necesitas</p>
             </div>
-          </fieldset>
-          <div class="field">
-            <label class="lab" for="f-extra">Algo más que deba saber <small>(opcional)</small></label>
-            <textarea class="inp" id="f-extra" name="extra" placeholder="Opcional"></textarea>
+            <div class="prog-track" aria-hidden="true"><span id="prog-bar"></span></div>
+            <ol class="prog-dots" aria-label="Pasos">
+              <li aria-current="step">Proyecto</li><li>Detalles</li><li>Tus datos</li>
+            </ol>
           </div>
-          <button class="btn" type="submit">Abrir WhatsApp <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
-          <p class="micro">Se abrirá WhatsApp con tu mensaje ya escrito. Tú decides si lo envías.</p>
+
+          <!-- Paso 1 -->
+          <div class="step-pane" data-step="1" role="group" aria-labelledby="st1-t">
+            <h3 class="step-title" id="st1-t" tabindex="-1">¿Qué va dentro de tu caja?</h3>
+            <fieldset class="picks" id="fs-services" aria-describedby="err-services">
+              <legend class="lab">Qué necesitas <small>(puedes marcar varias)</small></legend>
+              <div class="svc-picks">
+                <label class="svc-pick"><input type="checkbox" name="services" value="web"><span class="card"><i aria-hidden="true"></i><b>Web</b><small>Que te encuentren y te escriban.</small></span></label>
+                <label class="svc-pick"><input type="checkbox" name="services" value="app"><span class="card"><i aria-hidden="true"></i><b>App</b><small>Reservas, pedidos o un panel a medida.</small></span></label>
+                <label class="svc-pick"><input type="checkbox" name="services" value="ai_agent"><span class="card"><i aria-hidden="true"></i><b>Agente de IA</b><small>Contesta a tus clientes a cualquier hora.</small></span></label>
+                <label class="svc-pick"><input type="checkbox" name="services" value="unsure"><span class="card"><i aria-hidden="true"></i><b>No lo sé</b><small>Lo vemos juntos y te digo qué te conviene.</small></span></label>
+              </div>
+              <p class="err" id="err-services"></p>
+            </fieldset>
+            <fieldset class="picks" id="fs-goal" aria-describedby="err-goal">
+              <legend class="lab">Lo que más te importa conseguir</legend>
+              <div class="pick-row">
+                <label class="pick"><input type="radio" name="goal" value="more_clients"><span>Más clientes</span></label>
+                <label class="pick"><input type="radio" name="goal" value="bookings"><span>Reservas online</span></label>
+                <label class="pick"><input type="radio" name="goal" value="sell_online"><span>Vender online</span></label>
+                <label class="pick"><input type="radio" name="goal" value="automate_support"><span>Atender sin estar pendiente</span></label>
+                <label class="pick"><input type="radio" name="goal" value="internal_tools"><span>Organizar mi trabajo</span></label>
+                <label class="pick"><input type="radio" name="goal" value="other"><span>Otra cosa</span></label>
+              </div>
+              <p class="err" id="err-goal"></p>
+            </fieldset>
+            <div class="field">
+              <label class="lab" for="f-sector">A qué se dedica tu negocio</label>
+              <input class="inp" id="f-sector" name="sector" type="text" maxlength="120" placeholder="Ej. Peluquería en Reus" aria-describedby="err-sector" required>
+              <p class="err" id="err-sector"></p>
+            </div>
+            <div class="nav-row">
+              <button class="btn" type="button" data-next>Siguiente <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+            </div>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="step-pane" data-step="2" role="group" aria-labelledby="st2-t" hidden>
+            <h3 class="step-title" id="st2-t" tabindex="-1">Cuéntame un poco más.</h3>
+            <div class="field">
+              <label class="lab" for="f-desc">Qué te gustaría tener</label>
+              <p class="hint" id="hint-desc">Con tus palabras. Qué haces hoy, qué te falla y cómo te imaginas el resultado.</p>
+              <textarea class="inp" id="f-desc" name="description" maxlength="2000" rows="5" placeholder="Ej. Quiero que mis clientas reserven desde el móvil sin llamarme y que les llegue un recordatorio." aria-describedby="hint-desc err-desc" required></textarea>
+              <p class="err" id="err-desc"></p>
+            </div>
+            <fieldset class="picks" id="fs-hasweb">
+              <legend class="lab">¿Ya tienes web?</legend>
+              <div class="pick-row">
+                <label class="pick"><input type="radio" name="has_website" value="yes"><span>Sí</span></label>
+                <label class="pick"><input type="radio" name="has_website" value="no"><span>No</span></label>
+              </div>
+            </fieldset>
+            <div class="field" id="url-field" hidden>
+              <label class="lab" for="f-url">Dirección de tu web <small>(opcional)</small></label>
+              <input class="inp" id="f-url" name="website_url" type="url" inputmode="url" maxlength="200" autocomplete="url" placeholder="tunegocio.es" aria-describedby="err-url">
+              <p class="err" id="err-url"></p>
+            </div>
+            <fieldset class="picks" id="fs-budget" aria-describedby="err-budget">
+              <legend class="lab">Presupuesto aproximado</legend>
+              <div class="pick-row">
+                <label class="pick"><input type="radio" name="budget" value="lt_1000"><span>Menos de 1.000 €</span></label>
+                <label class="pick"><input type="radio" name="budget" value="1000_3000"><span>1.000 a 3.000 €</span></label>
+                <label class="pick"><input type="radio" name="budget" value="3000_6000"><span>3.000 a 6.000 €</span></label>
+                <label class="pick"><input type="radio" name="budget" value="gt_6000"><span>Más de 6.000 €</span></label>
+                <label class="pick"><input type="radio" name="budget" value="unsure"><span>Aún no lo sé</span></label>
+              </div>
+              <p class="err" id="err-budget"></p>
+            </fieldset>
+            <fieldset class="picks" id="fs-timeline" aria-describedby="err-timeline">
+              <legend class="lab">Para cuándo lo necesitas</legend>
+              <div class="pick-row">
+                <label class="pick"><input type="radio" name="timeline" value="asap"><span>Lo antes posible</span></label>
+                <label class="pick"><input type="radio" name="timeline" value="1_2_months"><span>En 1 o 2 meses</span></label>
+                <label class="pick"><input type="radio" name="timeline" value="3_6_months"><span>En 3 a 6 meses</span></label>
+                <label class="pick"><input type="radio" name="timeline" value="flexible"><span>Sin prisa</span></label>
+              </div>
+              <p class="err" id="err-timeline"></p>
+            </fieldset>
+            <div class="nav-row">
+              <button class="btn btn-ghost" type="button" data-prev>Atrás</button>
+              <button class="btn" type="button" data-next>Siguiente <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+            </div>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="step-pane" data-step="3" role="group" aria-labelledby="st3-t" hidden>
+            <h3 class="step-title" id="st3-t" tabindex="-1">¿Cómo te contesto?</h3>
+            <div class="row2">
+              <div class="field">
+                <label class="lab" for="f-nombre">Tu nombre</label>
+                <input class="inp" id="f-nombre" name="name" type="text" maxlength="80" autocomplete="name" placeholder="Ej. Laura" aria-describedby="err-nombre" required>
+                <p class="err" id="err-nombre"></p>
+              </div>
+              <div class="field">
+                <label class="lab" for="f-empresa">Empresa o negocio <small>(opcional)</small></label>
+                <input class="inp" id="f-empresa" name="company" type="text" maxlength="120" autocomplete="organization" placeholder="Ej. Bella Peluquería">
+                <p class="err"></p>
+              </div>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label class="lab" for="f-email">Email</label>
+                <input class="inp" id="f-email" name="email" type="email" maxlength="160" autocomplete="email" inputmode="email" placeholder="tu@email.com" aria-describedby="err-email" required>
+                <p class="err" id="err-email"></p>
+              </div>
+              <div class="field">
+                <label class="lab" for="f-tel">Teléfono o WhatsApp <small id="tel-opt">(opcional)</small></label>
+                <input class="inp" id="f-tel" name="phone" type="tel" maxlength="20" autocomplete="tel" inputmode="tel" placeholder="600 000 000" aria-describedby="err-tel">
+                <p class="err" id="err-tel"></p>
+              </div>
+            </div>
+            <fieldset class="picks" id="fs-pref">
+              <legend class="lab">Prefiero que me contestes por</legend>
+              <div class="pick-row">
+                <label class="pick"><input type="radio" name="contact_preference" value="email" checked><span>Email</span></label>
+                <label class="pick"><input type="radio" name="contact_preference" value="whatsapp"><span>WhatsApp</span></label>
+                <label class="pick"><input type="radio" name="contact_preference" value="call"><span>Llamada</span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label class="lab" for="f-source">Cómo me conociste <small>(opcional)</small></label>
+              <select class="inp" id="f-source" name="source">
+                <option value="">Elige una opción</option>
+                <option value="google">Google</option>
+                <option value="social">Redes sociales</option>
+                <option value="referral">Me lo recomendaron</option>
+                <option value="past_client">Ya trabajé contigo</option>
+                <option value="other">Otro</option>
+              </select>
+            </div>
+            <!-- Honeypot antispam: invisible para personas, los bots lo rellenan -->
+            <div class="hp" aria-hidden="true">
+              <label for="f-hp">No rellenes este campo</label>
+              <input id="f-hp" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="field">
+              <label class="check" for="f-consent">
+                <input id="f-consent" name="consent" type="checkbox" aria-describedby="err-consent" required>
+                <span class="box" aria-hidden="true"></span>
+                <span>He leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a> y acepto que uses mis datos solo para responder a esta solicitud.</span>
+              </label>
+              <p class="err" id="err-consent"></p>
+            </div>
+            <div class="nav-row">
+              <button class="btn btn-ghost" type="button" data-prev>Atrás</button>
+              <button class="btn" type="submit" id="send-btn"><span class="spin" aria-hidden="true"></span><span id="send-label">Enviar solicitud</span> <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+            </div>
+            <p class="micro" id="send-micro">Te contesto yo, en persona.</p>
+          </div>
         </form>
-        <div class="success" role="status">
-          <h3>Listo. Revisa WhatsApp y pulsa enviar.</h3>
-          <p>¿No se abrió WhatsApp? <a id="wa-fallback" href="https://wa.me/34624092545" target="_blank" rel="noopener">Ábrelo aquí</a>.</p>
+
+        <!-- Estados tras enviar -->
+        <div class="state st-sent" role="status" aria-live="polite">
+          <h3 tabindex="-1">Recibido. Gracias.</h3>
+          <p>Ya tengo tu solicitud. La leo con calma y te contesto yo, en persona.</p>
+        </div>
+        <div class="state st-wa" role="status" aria-live="polite">
+          <h3 tabindex="-1">Casi está. Revisa WhatsApp y pulsa enviar.</h3>
+          <p>Se ha abierto WhatsApp con tu solicitud ya escrita. Hasta que no la envíes, no me llega.</p>
+          <p>¿No se abrió? <a class="wa-link" href="https://wa.me/34624092545" target="_blank" rel="noopener">Ábrelo aquí</a> o <a class="mail-link" href="mailto:berbkarim@gmail.com">mándamela por email</a>.</p>
+        </div>
+        <div class="state st-error" role="alert">
+          <h3 tabindex="-1">No se ha podido enviar.</h3>
+          <p>No has perdido nada: tus respuestas siguen aquí. Vuelve a intentarlo o mándamela por WhatsApp con un toque.</p>
+          <div class="nav-row">
+            <button class="btn" type="button" id="retry-btn">Volver a intentarlo</button>
+            <a class="btn btn-ghost wa-link" href="https://wa.me/34624092545" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1079,6 +1287,7 @@ textarea.inp{min-height:96px;resize:vertical}
         <li><a href="mailto:berbkarim@gmail.com">berbkarim@gmail.com</a></li>
         <li><a href="https://wa.me/34624092545" target="_blank" rel="noopener">+34 624 09 25 45</a></li>
         <li><a href="https://github.com/karimkron" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="privacidad.html">Privacidad</a></li>
       </ul>
     </div>
     <p class="foot-copy">© 2026 DEV BOX</p>
@@ -1396,40 +1605,275 @@ textarea.inp{min-height:96px;resize:vertical}
     boxUpdate();
   }));
 
+/* ================= Request form: 3 steps, JSON payload, WhatsApp as backup =================
+   FORM_ENDPOINT: URL that receives a POST with the JSON below (Content-Type: application/json).
+   While it is empty, nothing is sent to a server: WhatsApp opens with the summary already written,
+   so the lead is never lost. The payload shape is documented in form-schema.md (schema_version 1). */
+  const FORM_ENDPOINT = 'https://devbox-api-gkrz.onrender.com/api/leads';
+  const WA_NUMBER = '34624092545', MAIL_TO = 'berbkarim@gmail.com';
+  const SCHEMA_VERSION = 1, CONSENT_VERSION = '2026-09-25'; // = versión de privacidad.html
+  const LABELS = {
+    services: { web: 'Web', app: 'App', ai_agent: 'Agente de IA', unsure: 'No lo sé' },
+    goal: { more_clients: 'Más clientes', bookings: 'Reservas online', sell_online: 'Vender online', automate_support: 'Atender sin estar pendiente', internal_tools: 'Organizar mi trabajo', other: 'Otra cosa' },
+    budget: { lt_1000: 'Menos de 1.000 €', '1000_3000': '1.000 a 3.000 €', '3000_6000': '3.000 a 6.000 €', gt_6000: 'Más de 6.000 €', unsure: 'Aún no lo sé' },
+    timeline: { asap: 'Lo antes posible', '1_2_months': 'En 1 o 2 meses', '3_6_months': 'En 3 a 6 meses', flexible: 'Sin prisa' },
+    contact_preference: { email: 'Email', whatsapp: 'WhatsApp', call: 'Llamada' }
+  };
+  const STEP_NAMES = ['Qué necesitas', 'Detalles', 'Tus datos'];
+
   const form = $('#form'), card = $('#form-card');
-  $('#to-form').addEventListener('click', () => {
-    const sel = picked().map(k => NAMES[k]);
-    $$('input[name="pieza"]', form).forEach(i => {
-      if (i.value === 'Aún no lo sé') i.checked = sel.length === 0 ? i.checked : false;
-      else i.checked = sel.includes(i.value);
+  const panes = $$('.step-pane', form), dots = $$('.prog-dots li', form);
+  const sendBtn = $('#send-btn'), sendLabel = $('#send-label'), sendMicro = $('#send-micro');
+  const startedAt = Date.now();
+  let step = 1, sending = false;
+
+  if (!FORM_ENDPOINT) {
+    sendLabel.textContent = 'Enviar por WhatsApp';
+    sendMicro.textContent = 'Se abrirá WhatsApp con tu solicitud ya escrita. Tú decides si la envías.';
+  }
+
+  const val = n => (form.elements[n] && form.elements[n].value || '').trim();
+  const checked = n => $$(`input[name="${n}"]:checked`, form).map(i => i.value);
+  const radio = n => checked(n)[0] || null;
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const PHONE_RE = /^\+?[\d\s().-]{9,20}$/;
+
+  function setErr(id, el, text) {
+    const e = $('#err-' + id);
+    if (e) e.textContent = text;
+    if (el.tagName === 'FIELDSET') el.toggleAttribute('data-invalid', !!text);
+    else el.setAttribute('aria-invalid', text ? 'true' : 'false');
+    return !text;
+  }
+  function normUrl(u) {
+    if (!u) return '';
+    const withProto = /^https?:\/\//i.test(u) ? u : 'https://' + u;
+    try { const x = new URL(withProto); return x.hostname.includes('.') ? x.href : null; } catch { return null; }
+  }
+
+  /* Validation per step. Returns the first invalid element (or null). */
+  function validate(n) {
+    const bad = [];
+    if (n === 1) {
+      if (!setErr('services', $('#fs-services'), checked('services').length ? '' : 'Marca al menos una opción. Si no lo tienes claro, elige «No lo sé».')) bad.push($('input[name="services"]', form));
+      if (!setErr('goal', $('#fs-goal'), radio('goal') ? '' : 'Elige lo que más te importa.')) bad.push($('input[name="goal"]', form));
+      if (!setErr('sector', form.elements.sector, val('sector').length >= 2 ? '' : 'Dime a qué se dedica tu negocio.')) bad.push(form.elements.sector);
+    }
+    if (n === 2) {
+      const d = val('description');
+      if (!setErr('desc', form.elements.description, d.length >= 15 ? '' : d ? 'Cuéntame un poco más, con una o dos frases me basta.' : 'Cuéntame qué te gustaría tener.')) bad.push(form.elements.description);
+      if (radio('has_website') === 'yes' && val('website_url') && !setErr('url', form.elements.website_url, normUrl(val('website_url')) ? '' : 'Esta dirección no parece correcta. Ej. tunegocio.es')) bad.push(form.elements.website_url);
+      else setErr('url', form.elements.website_url, '');
+      if (!setErr('budget', $('#fs-budget'), radio('budget') ? '' : 'Elige un rango. «Aún no lo sé» también vale.')) bad.push($('input[name="budget"]', form));
+      if (!setErr('timeline', $('#fs-timeline'), radio('timeline') ? '' : 'Elige un plazo.')) bad.push($('input[name="timeline"]', form));
+    }
+    if (n === 3) {
+      if (!setErr('nombre', form.elements.name, val('name') ? '' : 'Dime tu nombre.')) bad.push(form.elements.name);
+      const em = val('email');
+      if (!setErr('email', form.elements.email, EMAIL_RE.test(em) ? '' : em ? 'Revisa el email, parece que falta algo.' : 'Necesito tu email para contestarte.')) bad.push(form.elements.email);
+      const tel = val('phone'), needTel = radio('contact_preference') !== 'email';
+      if (!setErr('tel', form.elements.phone, tel ? (PHONE_RE.test(tel) ? '' : 'Revisa el número.') : needTel ? 'Para WhatsApp o llamada necesito tu número.' : '')) bad.push(form.elements.phone);
+      if (!setErr('consent', form.elements.consent, form.elements.consent.checked ? '' : 'Necesito tu permiso para usar estos datos y contestarte.')) bad.push(form.elements.consent);
+    }
+    return bad[0] || null;
+  }
+
+  function goTo(n, focus = true) {
+    step = n;
+    panes.forEach(p => {
+      const on = +p.dataset.step === n;
+      p.hidden = !on;
+      p.classList.toggle('enter', on && !RM.matches);
     });
-    $('#contacto').scrollIntoView({ behavior: RM.matches ? 'auto' : 'smooth', block: 'start' });
-    setTimeout(() => form.nombre.focus({ preventScroll: true }), RM.matches ? 0 : 900);
+    dots.forEach((li, i) => {
+      li.classList.toggle('done', i < n - 1);
+      if (i === n - 1) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+    });
+    $('#prog-bar').style.setProperty('--p', n / 3);
+    $('#prog-label').textContent = `Paso ${n} de 3`;
+    $('#prog-name').textContent = STEP_NAMES[n - 1];
+    if (focus) {
+      $(`#st${n}-t`).focus({ preventScroll: true });
+      const top = card.getBoundingClientRect().top;
+      if (top < 70 || top > innerHeight * .6) card.scrollIntoView({ behavior: RM.matches ? 'auto' : 'smooth', block: 'start' });
+    }
+  }
+  function next() {
+    const bad = validate(step);
+    if (bad) { bad.focus(); return; }
+    goTo(step + 1);
+  }
+  $$('[data-next]', form).forEach(b => b.addEventListener('click', next));
+  $$('[data-prev]', form).forEach(b => b.addEventListener('click', () => goTo(step - 1)));
+
+  /* Live cleanup of errors and small dependencies between fields */
+  form.addEventListener('input', e => {
+    const t = e.target;
+    if (t.getAttribute('aria-invalid') === 'true') {
+      const errId = (t.getAttribute('aria-describedby') || '').split(' ').find(x => x.startsWith('err-'));
+      if (errId && (t.type === 'checkbox' ? t.checked : t.value.trim())) { $('#' + errId).textContent = ''; t.setAttribute('aria-invalid', 'false'); }
+    }
+    const fs = t.closest('fieldset.picks');
+    if (fs && fs.hasAttribute('data-invalid')) { fs.removeAttribute('data-invalid'); const eid = fs.getAttribute('aria-describedby'); if (eid) $('#' + eid).textContent = ''; }
+  });
+  form.addEventListener('change', e => {
+    const t = e.target;
+    if (t.name === 'services') {
+      if (t.value === 'unsure' && t.checked) $$('input[name="services"]', form).forEach(i => { if (i !== t) i.checked = false; });
+      else if (t.checked) $('input[name="services"][value="unsure"]', form).checked = false;
+    }
+    if (t.name === 'has_website') {
+      const show = t.value === 'yes';
+      $('#url-field').hidden = !show;
+      if (!show) { form.elements.website_url.value = ''; setErr('url', form.elements.website_url, ''); }
+    }
+    if (t.name === 'contact_preference') $('#tel-opt').textContent = t.value === 'email' ? '(opcional)' : '';
   });
 
-/* ================= The form: opens WhatsApp with the message written ================= */
-  function setErr(field, text) {
-    $('#err-' + field).textContent = text;
-    form[field].setAttribute('aria-invalid', text ? 'true' : 'false');
+  /* The clean, stable object the future backend receives */
+  function buildPayload() {
+    const hasWeb = radio('has_website');
+    return {
+      schema_version: SCHEMA_VERSION,
+      services: checked('services'),
+      goal: radio('goal'),
+      sector: val('sector'),
+      description: val('description'),
+      has_website: hasWeb === 'yes' ? true : hasWeb === 'no' ? false : null,
+      website_url: hasWeb === 'yes' ? (normUrl(val('website_url')) || null) : null,
+      budget: radio('budget'),
+      timeline: radio('timeline'),
+      contact: {
+        name: val('name'),
+        email: val('email').toLowerCase(),
+        phone: val('phone') || null,
+        company: val('company') || null,
+        preference: radio('contact_preference') || 'email'
+      },
+      source: val('source') || null,
+      consent: { accepted: form.elements.consent.checked, version: CONSENT_VERSION, accepted_at: new Date().toISOString() },
+      meta: {
+        submitted_at: new Date().toISOString(),
+        page_url: location.href.split('#')[0],
+        language: navigator.language || null,
+        seconds_to_complete: Math.round((Date.now() - startedAt) / 1000)
+      }
+    };
+  }
+
+  /* Human summary for WhatsApp / email backup */
+  function summary(p) {
+    const L = LABELS, lines = [
+      `Hola Karim, soy ${p.contact.name}. Te mando mi solicitud desde la web:`,
+      '',
+      `• Qué necesito: ${listJoin(p.services.map(s => L.services[s]))}`,
+      `• Objetivo: ${L.goal[p.goal]}`,
+      `• Negocio: ${p.sector}${p.contact.company ? ' (' + p.contact.company + ')' : ''}`,
+      `• Web actual: ${p.has_website ? (p.website_url || 'Sí') : p.has_website === false ? 'No' : 'Sin indicar'}`,
+      `• Presupuesto: ${L.budget[p.budget]}`,
+      `• Plazo: ${L.timeline[p.timeline]}`,
+      '',
+      p.description,
+      '',
+      `Email: ${p.contact.email}${p.contact.phone ? ' · Tel: ' + p.contact.phone : ''} · Prefiero: ${L.contact_preference[p.contact.preference]}`
+    ];
+    return lines.join('\n');
+  }
+  function fillBackupLinks(p) {
+    const text = summary(p);
+    const wa = `https://wa.me/${WA_NUMBER}?text=` + encodeURIComponent(text);
+    const mail = `mailto:${MAIL_TO}?subject=` + encodeURIComponent('Solicitud desde la web: ' + p.contact.name) + '&body=' + encodeURIComponent(text);
+    $$('.wa-link', card).forEach(a => a.href = wa);
+    $$('.mail-link', card).forEach(a => a.href = mail);
+    return wa;
+  }
+  function showState(name) {
+    card.classList.remove('is-sent', 'is-wa', 'is-error');
+    if (name) {
+      card.classList.add('is-' + name);
+      const h = $(`.st-${name} h3`, card);
+      card.scrollIntoView({ behavior: RM.matches ? 'auto' : 'smooth', block: 'start' });
+      setTimeout(() => h.focus({ preventScroll: true }), 60);
+    }
+  }
+  function setBusy(on) {
+    sending = on;
+    sendBtn.setAttribute('aria-busy', on ? 'true' : 'false');
+    sendBtn.disabled = on;
+    sendLabel.textContent = on ? 'Enviando…' : (FORM_ENDPOINT ? 'Enviar solicitud' : 'Enviar por WhatsApp');
+  }
+
+  async function submit() {
+    if (sending) return;
+    const bad = validate(3);
+    if (bad) { bad.focus(); return; }
+    const p = buildPayload();
+    const wa = fillBackupLinks(p);
+
+    // Honeypot: a bot filled the hidden field. Pretend success, send nothing.
+    if (val('website')) { showState('sent'); return; }
+
+    if (!FORM_ENDPOINT) {                     // No backend yet: WhatsApp is the channel
+      window.open(wa, '_blank', 'noopener');
+      showState('wa');
+      return;
+    }
+    setBusy(true);
+    try {
+      const ctrl = new AbortController(), timer = setTimeout(() => ctrl.abort(), 60000); // margen para el arranque en frío del backend
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(p),
+        signal: ctrl.signal
+      });
+      clearTimeout(timer);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      showState('sent');
+      form.reset();
+    } catch (err) {
+      showState('error');
+    } finally {
+      setBusy(false);
+    }
   }
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const name = form.nombre.value.trim(), biz = form.negocio.value.trim(), extra = form.extra.value.trim();
-    setErr('nombre', name ? '' : 'Dime tu nombre.');
-    setErr('negocio', biz ? '' : 'Cuéntame qué negocio tienes.');
-    if (!name || !biz) { (name ? form.negocio : form.nombre).focus(); return; }
-    const picks = $$('input[name="pieza"]:checked', form).map(i => i.value);
-    const known = picks.filter(v => v !== 'Aún no lo sé');
-    let msg = `Hola Karim, soy ${name}. Mi negocio: ${biz}.`;
-    if (known.length) msg += ` Me interesa: ${listJoin(known)}.`;
-    else if (picks.length) msg += ' Aún no sé qué necesito.';
-    if (extra) msg += ' ' + extra;
-    const url = 'https://wa.me/34624092545?text=' + encodeURIComponent(msg);
-    $('#wa-fallback').href = url;
-    window.open(url, '_blank', 'noopener');
-    card.classList.add('sent');
+    if (step < 3) next(); else submit();
   });
-  ['nombre', 'negocio'].forEach(f => form[f].addEventListener('input', () => { if (form[f].value.trim()) setErr(f, ''); }));
+  // Enter in a text field on steps 1-2 moves forward (the submit button lives in step 3)
+  form.addEventListener('keydown', e => {
+    if (e.key !== 'Enter' || step === 3 || e.target.tagName !== 'INPUT' || e.isComposing) return;
+    e.preventDefault();
+    next();
+  });
+  $('#retry-btn').addEventListener('click', () => { showState(null); goTo(3, false); submit(); });
+
+  /* Warm-up: on Render's Free plan the backend sleeps after 15 min idle and takes ~1 min to wake.
+     The first time someone touches the form we ping /health so it is awake by the time they submit. */
+  let warmed = false;
+  function warmUp() {
+    if (warmed || !FORM_ENDPOINT) return;
+    warmed = true;
+    try { fetch(new URL('/health', FORM_ENDPOINT), { cache: 'no-store' }).catch(() => {}); } catch { /* bad endpoint URL */ }
+  }
+  form.addEventListener('focusin', warmUp);
+  form.addEventListener('pointerdown', warmUp);
+  $('#to-form').addEventListener('click', warmUp);
+
+  /* "Arma tu caja" hands its picks to step 1 */
+  const BOX_TO_FORM = { web: 'web', app: 'app', ia: 'ai_agent' };
+  $('#to-form').addEventListener('click', () => {
+    const sel = picked().map(k => BOX_TO_FORM[k]);
+    if (sel.length) $$('input[name="services"]', form).forEach(i => { i.checked = sel.includes(i.value); });
+    showState(null);
+    goTo(1, false);
+    $('#contacto').scrollIntoView({ behavior: RM.matches ? 'auto' : 'smooth', block: 'start' });
+    const first = sel.length ? $('input[name="goal"]', form) : $('input[name="services"]', form);
+    setTimeout(() => first.focus({ preventScroll: true }), RM.matches ? 0 : 900);
+  });
+  goTo(1, false);
+
 
   /* ---- Start ---- */
   measure();
