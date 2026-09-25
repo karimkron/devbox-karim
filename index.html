@@ -543,7 +543,7 @@ h2{margin:18px 0 0;font:600 clamp(2.2rem,4.4vw,4.1rem)/1.03 var(--f-display);let
 .portrait{position:relative;aspect-ratio:1/1.04;max-width:460px;width:100%;overflow:hidden;border:1px solid var(--hair);border-radius:26px;background:linear-gradient(180deg,#142a1d,#0d1d14)}
 .portrait::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 62% 46% at 50% 44%,rgba(180,255,0,.16),rgba(180,255,0,0) 70%);opacity:.6}
 .live .portrait::before{animation:breathe 7s ease-in-out infinite alternate -2s}
-.portrait img{position:absolute;left:50%;bottom:0;width:92%;transform:translateX(-50%);filter:drop-shadow(0 20px 40px rgba(0,0,0,.45))}
+.portrait img{position:absolute;left:50%;bottom:0;width:92%;height:auto;transform:translateX(-50%);filter:drop-shadow(0 20px 40px rgba(0,0,0,.45));-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%)}
 .about p.body{max-width:54ch;margin-top:22px;color:var(--text-secondary);font-size:clamp(1.05rem,1.3vw,1.18rem)}
 .stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:clamp(24px,4.5vw,64px);margin-top:44px}
 .stat .n{display:block;font:600 clamp(2.2rem,3.6vw,3.2rem)/1 var(--f-display);font-variant-numeric:tabular-nums}
@@ -698,7 +698,10 @@ textarea.inp{min-height:96px;resize:vertical}
 @media (max-width:520px){
   .bubble:nth-child(2){margin-left:6%}
   .typing{margin-left:8%}
-  .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  /* Cada columna mide lo que necesita su contenido (la cifra 28.930+ o la palabra más larga de la etiqueta)
+     y la cifra escala con el ancho de pantalla, así nada se sale por la derecha. */
+  .stats{grid-template-columns:repeat(3,auto);justify-content:space-between;gap:12px}
+  .stat .n{font-size:clamp(1.5rem,7.6vw,2.2rem)}
   .stat .l{letter-spacing:.06em}
 }
 
@@ -1043,7 +1046,13 @@ textarea.inp{min-height:96px;resize:vertical}
   <!-- S6 · Sobre mí -->
   <section class="sec about live-scope" id="sobre-mi" data-reveal aria-labelledby="sobre-mi-t">
     <div class="wrap grid">
-      <div class="portrait rv"><img src="assets/karim.png" alt="Karim, desarrollador de DEV BOX, con camisa azul claro" width="500" height="500" loading="lazy" decoding="async"></div>
+      <div class="portrait rv">
+        <picture>
+          <source type="image/avif" srcset="assets/karim-berb-400.avif 400w, assets/karim-berb-800.avif 800w, assets/karim-berb-1200.avif 1200w" sizes="(max-width: 900px) min(calc(92vw - 36px), 387px), min(calc(36vw - 36px), 424px)">
+          <source type="image/webp" srcset="assets/karim-berb-400.webp 400w, assets/karim-berb-800.webp 800w, assets/karim-berb-1200.webp 1200w" sizes="(max-width: 900px) min(calc(92vw - 36px), 387px), min(calc(36vw - 36px), 424px)">
+          <img src="assets/karim-berb-800.png" alt="Karim Berb, fundador de DEV BOX" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+      </div>
       <div>
         <p class="kicker rv"><svg class="sig" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" d="M14 3 25 9v11l-11 6-11-6V9z"/><path pathLength="1" d="M3 9l11 6 11-6"/><path pathLength="1" d="M14 15v11"/></svg>Sobre mí</p>
         <h2 class="rv" id="sobre-mi-t">Hola, soy Karim.</h2>
