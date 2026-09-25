@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de privacidad · DEV BOX</title>
-<meta name="description" content="Qué datos recojo en DEV BOX cuando me pides un presupuesto, para qué los uso, cuánto tiempo los guardo y cómo ejercer tus derechos.">
+<meta name="description" content="Política de privacidad de DEV BOX: responsable, finalidades, bases de legitimación (art. 6 RGPD), encargados del tratamiento, transferencias internacionales, plazos de conservación y derechos (arts. 15-22 RGPD).">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0b1a12">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1a12'/%3E%3Cpath d='M12 7H10a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V10a3 3 0 0 0-3-3h-2' fill='none' stroke='%23e8f0e4' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M14 7h4' stroke='%23b4ff00' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -12,125 +12,159 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400&family=Zilla+Slab:wght@500;600&display=swap" rel="stylesheet">
 <!--
-  Versión 2026-09-25. Si cambias el texto, cambia también la versión aquí abajo y CONSENT_VERSION en index.html.
-  Si añades otro proveedor que vea datos (base de datos, email, CRM...), añádelo en "Con quién los comparto".
+  Versión 2026-09-25.3. Si cambias el texto, cambia también la versión aquí y CONSENT_VERSION en index.html.
+  Si añades otro proveedor que trate datos, añádelo en la sección 6 (encargados) y en la tabla de primera capa.
+  Si el responsable se da de alta como autónomo, añade su NIF y, por la LSSI, un aviso legal.
 -->
 <style>
-:root{--canvas:#0b1a12;--panel:#10231a;--accent:#b4ff00;--accent-ink:#0b1a12;--text-primary:#e8f0e4;--text-secondary:#93a597;--hair:rgba(232,240,228,.09);--focus:#b4ff00;
-  --f-display:'Zilla Slab',Georgia,serif;--f-body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--gutter:clamp(16px,5vw,48px)}
+:root{--canvas:#0b1a12;--panel:#10231a;--accent:#b4ff00;--accent-ink:#0b1a12;--text-primary:#e8f0e4;--text-secondary:#a5b5a8;--hair:rgba(232,240,228,.1);--line:rgba(232,240,228,.16);--focus:#b4ff00;
+  --f-display:'Zilla Slab',Georgia,serif;--f-body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--gutter:clamp(16px,4vw,40px)}
 *,*::before,*::after{box-sizing:border-box}
 html{background:var(--canvas);color-scheme:dark;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--canvas);color:var(--text-primary);font:400 1.0625rem/1.7 var(--f-body);-webkit-font-smoothing:antialiased}
-.skip{position:fixed;left:16px;top:-64px;z-index:100;background:var(--accent);color:var(--accent-ink);padding:12px 18px;border-radius:10px;text-decoration:none}
+body{margin:0;background:var(--canvas);color:var(--text-primary);font:400 .9375rem/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+.skip{position:fixed;left:16px;top:-64px;z-index:100;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none}
 .skip:focus{top:16px}
-.wrap{width:min(760px,100% - 2*var(--gutter));margin:0 auto;padding:clamp(56px,10vh,110px) 0 80px}
-.back{display:inline-block;margin-bottom:40px;color:var(--text-secondary);font:400 .75rem/1 var(--f-mono);letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+.wrap{width:min(820px,100% - 2*var(--gutter));margin:0 auto;padding:clamp(36px,7vh,72px) 0 64px}
+.back{display:inline-block;margin-bottom:28px;color:var(--text-secondary);font:400 .75rem/1 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;text-decoration:none}
 .back:hover{color:var(--text-primary)}
-h1{margin:0 0 12px;font:600 clamp(2.2rem,4.4vw,3.4rem)/1.05 var(--f-display);letter-spacing:-.015em}
-.intro{margin:18px 0 0;font-size:1.12rem}
-h2{margin:48px 0 12px;padding-top:28px;border-top:1px solid var(--hair);font:600 1.45rem/1.2 var(--f-display)}
-h3{margin:22px 0 8px;font:500 1.05rem/1.3 var(--f-body);color:var(--text-primary)}
-p,li{color:var(--text-secondary)}
-p{margin:0 0 12px}
-ul{margin:0 0 12px;padding-left:1.2em}
-li{margin:0 0 8px}
+h1{margin:0 0 8px;font:600 clamp(1.7rem,3.6vw,2.3rem)/1.1 var(--f-display);letter-spacing:-.01em}
+h2{margin:34px 0 10px;padding-top:20px;border-top:1px solid var(--hair);font:600 1.15rem/1.25 var(--f-display)}
+h3{margin:18px 0 6px;font:500 .9375rem/1.35 var(--f-body);color:var(--text-primary)}
+p,li,td,dd{color:var(--text-secondary)}
+p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-left:1.25em}
+li{margin:0 0 5px}
 li::marker{color:var(--accent)}
-strong{color:var(--text-primary);font-weight:500}
-a{color:var(--text-primary);text-underline-offset:4px}
+strong,b{color:var(--text-primary);font-weight:500}
+a{color:var(--text-primary);text-underline-offset:3px}
 a:hover{color:var(--accent)}
-.meta{font:400 .75rem/1.5 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
-.card{margin:18px 0;padding:18px 20px;border:1px solid var(--hair);border-radius:14px;background:var(--panel)}
-dl{display:grid;gap:10px;margin:0}
-dl div{display:grid;gap:2px}
-dt{font:400 .72rem/1.3 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
-dd{margin:0;overflow-wrap:anywhere}
-.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--hair)}
-:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
-@media (min-width:600px){dl div{grid-template-columns:180px 1fr;gap:16px;align-items:baseline}}
+.meta{margin:0 0 20px;font:400 .75rem/1.5 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary)}
+.ref{font-family:var(--f-mono);font-size:.875rem;color:var(--text-primary);white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:.875rem;line-height:1.5}
+.tbl caption{text-align:left;margin-bottom:8px;font:600 1rem/1.3 var(--f-display);color:var(--text-primary)}
+.tbl th,.tbl td{padding:9px 10px;text-align:left;vertical-align:top;border:1px solid var(--line)}
+.tbl th{background:var(--panel);color:var(--text-primary);font-weight:500}
+.tbl thead th{font:400 .72rem/1.3 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary)}
+.first th{width:28%}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll .tbl{min-width:620px}
+.foot{margin-top:40px;padding-top:18px;border-top:1px solid var(--hair);font:400 .75rem/1.5 var(--f-mono);letter-spacing:.08em;color:var(--text-secondary)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:4px}
+@media (max-width:560px){.first th,.first td{display:block;width:100%}.first th{border-bottom:0}.first td{border-top:0}}
 </style>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <main class="wrap" id="contenido">
   <a class="back" href="index.html#contacto">← Volver a la web</a>
-  <h1>Política de privacidad.</h1>
-  <p class="meta">Versión 2026-09-25 · Actualizada el 25 de septiembre de 2026</p>
-  <p class="intro">Te explico, sin letra pequeña, qué datos recojo cuando me pides un presupuesto, para qué los uso y cómo puedes pedirme que los borre.</p>
+  <h1>Política de privacidad</h1>
+  <p class="meta">Versión 2026-09-25.3 · Reglamento (UE) 2016/679 (RGPD) · Ley Orgánica 3/2018 (LOPDGDD)</p>
 
-  <h2>1. Quién soy</h2>
-  <p>Tus datos los trato yo, <strong>Karim Berb</strong>, desarrollador freelance que trabaja por cuenta propia con el nombre comercial <strong>DEV BOX</strong>, en Tarragona (España).</p>
-  <div class="card">
-    <dl>
-      <div><dt>Responsable</dt><dd>Karim Berb (DEV BOX)</dd></div>
-      <div><dt>Email</dt><dd><a href="mailto:berbkarim@gmail.com">berbkarim@gmail.com</a></dd></div>
-      <div><dt>Teléfono y WhatsApp</dt><dd><a href="https://wa.me/34624092545" target="_blank" rel="noopener">+34 624 09 25 45</a></dd></div>
-      <div><dt>Dónde</dt><dd>Tarragona, España</dd></div>
-    </dl>
+  <p>Información facilitada en cumplimiento de los arts. <span class="ref">12</span> y <span class="ref">13 RGPD</span> y del art. <span class="ref">11 LOPDGDD</span>, estructurada por capas: la tabla siguiente contiene la información básica y los apartados 1 a 11 desarrollan la información adicional.</p>
+
+  <table class="tbl first">
+    <caption>Información básica sobre protección de datos</caption>
+    <tbody>
+      <tr><th scope="row">Responsable</th><td>Karim Berb, persona física (DEV BOX). Contacto: <a href="mailto:berbkarim@gmail.com">berbkarim@gmail.com</a>.</td></tr>
+      <tr><th scope="row">Finalidades</th><td>Gestión de solicitudes de información y presupuesto recibidas mediante el formulario web; mantenimiento de la correspondencia asociada (bandeja de soporte); envío de un acuse de recibo automático; prevención de spam y abuso; acreditación del consentimiento.</td></tr>
+      <tr><th scope="row">Legitimación</th><td>Consentimiento del interesado (<span class="ref">art. 6.1.a RGPD</span>); aplicación de medidas precontractuales a petición del interesado (<span class="ref">art. 6.1.b</span>); cumplimiento de obligaciones legales, en su caso (<span class="ref">art. 6.1.c</span>); interés legítimo en la seguridad del servicio y en la prueba del consentimiento (<span class="ref">art. 6.1.f</span>).</td></tr>
+      <tr><th scope="row">Destinatarios</th><td>No se ceden datos a terceros salvo obligación legal. Acceden encargados del tratamiento (<span class="ref">art. 28 RGPD</span>): Render Services, Inc.; Supabase Pte. Ltd.; Plus Five Five, Inc. (Resend); Google Ireland Ltd./Google LLC.</td></tr>
+      <tr><th scope="row">Transferencias internacionales</th><td>Las solicitudes y conversaciones se alojan en la UE (servidor de aplicación en Fráncfort, Alemania; base de datos en Irlanda). Hay transferencias a EE. UU. por el servicio de correo electrónico y posibles accesos de soporte técnico desde EE. UU. y Singapur, amparados en la decisión de adecuación del Marco de Privacidad de Datos UE-EE. UU. (<span class="ref">art. 45 RGPD</span>) o en cláusulas contractuales tipo de la Comisión Europea (<span class="ref">art. 46.2.c RGPD</span>).</td></tr>
+      <tr><th scope="row">Conservación</th><td>Solicitudes no convertidas en contrato y su correspondencia: supresión automática a los 12 meses sin actividad. Clientes: durante la relación y los plazos legales de prescripción.</td></tr>
+      <tr><th scope="row">Derechos</th><td>Acceso, rectificación, supresión, limitación, portabilidad y oposición, y retirada del consentimiento (<span class="ref">arts. 7.3 y 15-22 RGPD</span>); reclamación ante la AEPD (<span class="ref">art. 77 RGPD</span>).</td></tr>
+      <tr><th scope="row">Información adicional</th><td>Apartados 1 a 11 de esta página.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>1. Responsable del tratamiento</h2>
+  <p>Responsable (<span class="ref">art. 4.7 RGPD</span>): <strong>Karim Berb</strong>, persona física, que ofrece sus servicios con la marca <strong>DEV BOX</strong>. Datos de contacto (<span class="ref">art. 13.1.a RGPD</span>): correo electrónico <a href="mailto:berbkarim@gmail.com">berbkarim@gmail.com</a>. Teléfono / WhatsApp: <a href="https://wa.me/34624092545" target="_blank" rel="noopener">+34 624 09 25 45</a>.</p>
+  <p>No se ha designado delegado de protección de datos, al no concurrir los supuestos de los arts. <span class="ref">37 RGPD</span> y <span class="ref">34 LOPDGDD</span>.</p>
+
+  <h2>2. Categorías de datos y origen</h2>
+  <p>Los datos proceden del propio interesado. No se tratan categorías especiales de datos (<span class="ref">art. 9 RGPD</span>); se ruega no incluirlas en los campos de texto libre.</p>
+  <ul>
+    <li><strong>Identificativos y de contacto:</strong> nombre, dirección de correo electrónico, teléfono (opcional), empresa (opcional) y canal de contacto preferido.</li>
+    <li><strong>Contenido de la solicitud:</strong> servicios de interés, objetivo, sector de actividad, descripción libre, sitio web existente, presupuesto y plazo orientativos, y procedencia (cómo nos conoció).</li>
+    <li><strong>Acreditación del consentimiento</strong> (<span class="ref">art. 7.1 RGPD</span>): versión de esta política aceptada y marca temporal del cliente y del servidor.</li>
+    <li><strong>Datos técnicos del envío:</strong> dirección IP, agente de usuario (navegador), URL de origen, idioma del navegador y tiempo de cumplimentación del formulario.</li>
+    <li><strong>Comunicaciones:</strong> mensajes de correo electrónico intercambiados (remitente, destinatarios, asunto, fecha, cuerpo en texto y HTML saneado, identificadores <span class="ref">Message-ID</span>, <span class="ref">In-Reply-To</span> y <span class="ref">References</span>) y metadatos de los adjuntos (nombre, tipo y tamaño). El contenido de los adjuntos no se almacena en nuestra base de datos; se obtiene del proveedor de correo solo cuando se consulta.</li>
+  </ul>
+  <p>Los campos marcados como obligatorios en el formulario son necesarios para atender la solicitud; si no se facilitan, no es posible tramitarla (<span class="ref">art. 13.2.e RGPD</span>).</p>
+
+  <h2>3. Finalidades y bases de legitimación</h2>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th scope="col">Finalidad</th><th scope="col">Datos</th><th scope="col">Base jurídica</th></tr></thead>
+    <tbody>
+      <tr><td>Atender la solicitud, elaborar presupuesto y mantener la correspondencia (bandeja de soporte).</td><td>Identificativos, contacto, contenido de la solicitud, comunicaciones.</td><td>Consentimiento (<span class="ref">6.1.a</span>) y medidas precontractuales a petición del interesado (<span class="ref">6.1.b</span>).</td></tr>
+      <tr><td>Acuse de recibo automático por correo electrónico.</td><td>Nombre, correo, servicios, objetivo y canal preferido.</td><td>Medidas precontractuales (<span class="ref">6.1.b</span>).</td></tr>
+      <tr><td>Prevención de spam y abuso del formulario (límite de envíos por IP, filtro de envíos automatizados, límite de un acuse por destinatario cada 24 h).</td><td>IP, agente de usuario, tiempo de cumplimentación, huella SHA-256 del correo.</td><td>Interés legítimo en la seguridad del servicio (<span class="ref">6.1.f</span>; considerando 49 RGPD).</td></tr>
+      <tr><td>Acreditación del consentimiento prestado.</td><td>Versión aceptada, marcas temporales, IP, agente de usuario.</td><td>Interés legítimo (<span class="ref">6.1.f</span>) en relación con la carga de la prueba del <span class="ref">art. 7.1</span>.</td></tr>
+      <tr><td>Relación contractual, facturación y obligaciones fiscales y contables, si se contrata el servicio.</td><td>Identificativos, contacto y datos del encargo.</td><td>Ejecución del contrato (<span class="ref">6.1.b</span>) y obligación legal (<span class="ref">6.1.c</span>).</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>El consentimiento se presta mediante una casilla no premarcada y puede retirarse en cualquier momento, sin que ello afecte a la licitud del tratamiento previo (<span class="ref">art. 7.3 RGPD</span>). No se envían comunicaciones comerciales, no se elaboran perfiles y no se adoptan decisiones individuales automatizadas con efectos jurídicos o significativos (<span class="ref">art. 22 RGPD</span>). El filtro antispam descarta automáticamente envíos con indicios de automatización, sin efectos sobre el interesado, que dispone siempre del correo electrónico y de WhatsApp como canales alternativos.</p>
+
+  <h2>4. Plazos de conservación</h2>
+  <p>Aplicación del principio de limitación del plazo de conservación (<span class="ref">art. 5.1.e RGPD</span>). Las supresiones marcadas como automáticas las ejecuta el propio sistema mediante una tarea periódica.</p>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th scope="col">Datos</th><th scope="col">Plazo</th></tr></thead>
+    <tbody>
+      <tr><td>Solicitud no convertida en contrato, con sus datos técnicos, notas internas, historial y conversación asociada (mensajes enviados y recibidos).</td><td>Supresión automática a los <strong>12 meses</strong> desde la última actividad del expediente. La supresión del expediente arrastra la de su conversación.</td></tr>
+      <tr><td>Conversaciones iniciadas por correo electrónico sin solicitud previa en el formulario.</td><td>Supresión automática a los <strong>12 meses</strong> desde el último mensaje.</td></tr>
+      <tr><td>Clientes (solicitud convertida en contrato).</td><td>Durante la relación contractual y, después, bloqueados (<span class="ref">art. 32 LOPDGDD</span>) durante los plazos de prescripción de las acciones que pudieran derivarse de la relación y los exigidos por la normativa tributaria (4 años, <span class="ref">art. 66 Ley 58/2003, General Tributaria</span>).</td></tr>
+      <tr><td>Huella SHA-256 del correo usada para limitar los acuses de recibo.</td><td>Supresión automática a los <strong>7 días</strong>.</td></tr>
+      <tr><td>Identificadores técnicos de eventos del proveedor de correo (sin datos personales), usados para evitar duplicados.</td><td>Supresión automática a los <strong>30 días</strong>.</td></tr>
+      <tr><td>Copias de los correos en el proveedor de envío y recepción (Resend).</td><td><strong>30 días</strong>, conforme a la política de retención del proveedor.</td></tr>
+      <tr><td>Avisos internos de mensaje nuevo en el buzón del responsable (Gmail): nombre y correo del remitente, sin el contenido. Si la base de datos no está disponible, la solicitud se remite íntegra a ese buzón como contingencia para no perderla.</td><td>Hasta su supresión manual, con la misma periodicidad máxima de 12 meses.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>La supresión puede anticiparse a petición del interesado (<span class="ref">art. 17 RGPD</span>).</p>
+
+  <h2>5. Destinatarios</h2>
+  <p>No se ceden datos a terceros, salvo obligación legal (p. ej., requerimientos de autoridades judiciales o de la Administración tributaria). Si el interesado elige contactar por WhatsApp, la comunicación se rige además por las condiciones de WhatsApp Ireland Limited, que actúa como responsable independiente.</p>
+
+  <h2>6. Encargados del tratamiento y transferencias internacionales</h2>
+  <p>Proveedores que tratan datos por cuenta del responsable, con contrato de encargo conforme al <span class="ref">art. 28 RGPD</span> (acuerdos de tratamiento de datos de cada proveedor):</p>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th scope="col">Encargado</th><th scope="col">Servicio</th><th scope="col">Ubicación del tratamiento</th><th scope="col">Garantía de la transferencia</th></tr></thead>
+    <tbody>
+      <tr><td>Render Services, Inc. (EE. UU.)</td><td>Alojamiento de la web y del servidor de aplicación que recibe el formulario.</td><td>Servidor de aplicación en Fráncfort (Alemania, UE); web servida desde la red de distribución del proveedor.</td><td>Marco de Privacidad de Datos UE-EE. UU. (<span class="ref">art. 45</span>); subsidiariamente, cláusulas contractuales tipo (<span class="ref">art. 46.2.c</span>).</td></tr>
+      <tr><td>Supabase Pte. Ltd. (Singapur)</td><td>Base de datos PostgreSQL (solicitudes y conversaciones).</td><td>Datos alojados en la UE: región <span class="ref">eu-west-1</span> (Irlanda). Posibles accesos remotos de soporte técnico desde EE. UU. y Singapur.</td><td>Alojamiento en la UE, sin transferencia. Para los accesos de soporte, cláusulas contractuales tipo de la Comisión Europea (<span class="ref">art. 46.2.c</span>).</td></tr>
+      <tr><td>Plus Five Five, Inc. — Resend (EE. UU.)</td><td>Envío y recepción de correo electrónico (acuses, respuestas y mensajes entrantes).</td><td>EE. UU. (infraestructura de Amazon Web Services, Inc.).</td><td>Marco de Privacidad de Datos UE-EE. UU. (<span class="ref">art. 45</span>).</td></tr>
+      <tr><td>Google Ireland Limited / Google LLC</td><td>Correo electrónico del responsable (Gmail) y tipografías de esta web (Google Fonts), que implican la transmisión de la dirección IP del visitante a Google al cargar la página.</td><td>UE y EE. UU.</td><td>Marco de Privacidad de Datos UE-EE. UU. (<span class="ref">art. 45</span>) y cláusulas contractuales tipo (<span class="ref">art. 46.2.c</span>).</td></tr>
+    </tbody>
+  </table>
   </div>
 
-  <h2>2. Qué datos recojo</h2>
-  <h3>Si rellenas el formulario de solicitud</h3>
+  <h2>7. Cookies y almacenamiento local</h2>
+  <p>Esta web no instala cookies ni utiliza almacenamiento local del navegador con fines analíticos, publicitarios o de seguimiento, por lo que no resulta aplicable el deber de consentimiento del <span class="ref">art. 22.2 LSSI</span>. La única cookie del sistema pertenece al panel de administración, de uso exclusivo del responsable (técnica, de sesión, <span class="ref">HttpOnly</span>, <span class="ref">Secure</span>, <span class="ref">SameSite=Strict</span>).</p>
+
+  <h2>8. Medidas de seguridad</h2>
+  <p>Medidas técnicas y organizativas apropiadas al riesgo (<span class="ref">arts. 25 y 32 RGPD</span>): cifrado en tránsito (HTTPS/TLS) en todas las comunicaciones, incluida la conexión con la base de datos; base de datos sin acceso público, con seguridad a nivel de fila y sin permisos para roles anónimos; acceso restringido al responsable mediante contraseña almacenada con <span class="ref">bcrypt</span> y sesiones cuyo token se guarda solo como hash; limitación de intentos de acceso y de envíos por IP; validación estricta de los datos recibidos; verificación de firma HMAC-SHA256 de las notificaciones del proveedor de correo; saneamiento en servidor del HTML de los correos entrantes; y registros de actividad sin direcciones IP ni contenido de las solicitudes. Minimización de datos (<span class="ref">art. 5.1.c</span>): el acuse de recibo no reproduce texto libre introducido por el interesado.</p>
+
+  <h2>9. Derechos del interesado</h2>
   <ul>
-    <li><strong>Lo que necesitas:</strong> el tipo de proyecto (web, app o agente de IA), tu objetivo, tu tipo de negocio, lo que me cuentas de tu proyecto, si ya tienes web y su dirección, el presupuesto y el plazo orientativos y cómo me conociste.</li>
-    <li><strong>Tus datos de contacto:</strong> nombre, email, teléfono (si lo das), nombre del negocio (si lo das) y cómo prefieres que te conteste.</li>
-    <li><strong>Datos técnicos del envío:</strong> fecha y hora, dirección IP, tipo de navegador, la página e idioma desde los que envías y el tiempo que tardaste en rellenarlo. Me sirven para frenar el spam y para poder demostrar que aceptaste esta política (también guardo qué versión aceptaste).</li>
+    <li><strong>Acceso</strong> (<span class="ref">art. 15</span>), <strong>rectificación</strong> (<span class="ref">art. 16</span>) y <strong>supresión</strong> (<span class="ref">art. 17</span>).</li>
+    <li><strong>Limitación del tratamiento</strong> (<span class="ref">art. 18</span>); el responsable comunicará las rectificaciones, supresiones y limitaciones a los destinatarios (<span class="ref">art. 19</span>).</li>
+    <li><strong>Portabilidad</strong> (<span class="ref">art. 20</span>) de los datos tratados con base en el consentimiento o el contrato, en formato estructurado y de uso común.</li>
+    <li><strong>Oposición</strong> (<span class="ref">art. 21</span>) al tratamiento basado en el interés legítimo.</li>
+    <li>No ser objeto de <strong>decisiones individuales automatizadas</strong> (<span class="ref">art. 22</span>); no se adoptan.</li>
+    <li><strong>Retirada del consentimiento</strong> en cualquier momento (<span class="ref">art. 7.3</span>).</li>
   </ul>
-  <h3>Si me escribes por email o contestas a mis emails</h3>
-  <p>Guardo los mensajes que nos crucemos (con su fecha, email y asunto) y los nombres de los archivos que adjuntes, para tener toda nuestra conversación en un mismo sitio.</p>
-  <h3>Si me escribes por WhatsApp</h3>
-  <p>La conversación pasa por WhatsApp (Meta), que trata tus datos según su propia política de privacidad.</p>
-  <p>No necesito datos delicados (salud, ideología, etc.). Por favor, no los incluyas en tu mensaje.</p>
+  <p>Ejercicio: mediante correo electrónico a <a href="mailto:berbkarim@gmail.com">berbkarim@gmail.com</a>, indicando el derecho que se ejercita. Es gratuito (<span class="ref">art. 12.5 RGPD</span>). Se responderá en el plazo de un mes, prorrogable otros dos meses en caso de complejidad o número de solicitudes, informando de la prórroga (<span class="ref">art. 12.3 RGPD</span>). Solo si existen dudas razonables sobre la identidad del solicitante se podrá pedir información adicional para confirmarla (<span class="ref">art. 12.6 RGPD</span>). Régimen de ejercicio: <span class="ref">arts. 12 a 18 LOPDGDD</span>.</p>
 
-  <h2>3. Para qué los uso</h2>
-  <ul>
-    <li>Contestarte, entender lo que necesitas y, si quieres, prepararte un presupuesto.</li>
-    <li>Enviarte un email automático para confirmarte que he recibido tu solicitud.</li>
-    <li>Guardar el historial de nuestra conversación para no preguntarte dos veces lo mismo.</li>
-    <li>Proteger el formulario del spam y de los abusos.</li>
-  </ul>
-  <p>No te añado a ninguna lista de correo, no te mando publicidad, no vendo tus datos y no tomo decisiones automáticas sobre ti.</p>
+  <h2>10. Reclamación ante la autoridad de control</h2>
+  <p>Si el interesado considera que el tratamiento infringe la normativa, puede presentar una reclamación ante la <strong>Agencia Española de Protección de Datos</strong> (C/ Jorge Juan, 6, 28001 Madrid; <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>), conforme al <span class="ref">art. 77 RGPD</span>, sin perjuicio de dirigirse previamente al responsable.</p>
 
-  <h2>4. Por qué puedo usarlos</h2>
-  <ul>
-    <li><strong>Porque me das tu consentimiento</strong> al marcar la casilla del formulario (artículo 6.1.a del RGPD). Puedes retirarlo cuando quieras escribiéndome; lo hecho antes sigue siendo válido.</li>
-    <li><strong>Porque me lo pides tú:</strong> estudiar tu proyecto y enviarte un presupuesto son pasos previos a un posible contrato (artículo 6.1.b del RGPD). Si trabajamos juntos, la base pasa a ser el contrato.</li>
-    <li><strong>Por mi interés legítimo</strong> en proteger el formulario del spam y en poder demostrar que diste tu consentimiento (artículo 6.1.f del RGPD).</li>
-  </ul>
+  <h2>11. Menores y modificaciones</h2>
+  <p>Los servicios se dirigen a empresas y profesionales. No se tratan conscientemente datos de menores de 14 años (<span class="ref">art. 8 RGPD</span> y <span class="ref">art. 7 LOPDGDD</span>). Cualquier modificación de esta política se reflejará en su número de versión; el formulario registra la versión aceptada por cada interesado. Las modificaciones sustanciales se comunicarán a los interesados cuyos datos se conserven.</p>
 
-  <h2>5. Cuánto tiempo los guardo</h2>
-  <ul>
-    <li><strong>Si no llegamos a trabajar juntos:</strong> tu solicitud y nuestra conversación se borran solas a los <strong>12 meses</strong> sin actividad.</li>
-    <li><strong>Si trabajamos juntos:</strong> mientras dure el proyecto y, después, el tiempo que obliguen las leyes fiscales y contables.</li>
-    <li><strong>Protección contra abusos:</strong> para no mandar más de un email de confirmación al día a la misma dirección, guardo durante 7 días una huella cifrada de tu email, no el email en sí.</li>
-  </ul>
-  <p>Si me lo pides, los borro antes.</p>
-
-  <h2>6. Con quién los comparto</h2>
-  <p>Con nadie, salvo que una ley me obligue. Para que todo funcione uso estos servicios, que tratan los datos solo por encargo mío:</p>
-  <ul>
-    <li><strong>Render</strong> (Render Services, Inc., EE. UU.): aloja esta web y el sistema que recibe el formulario. El servidor que procesa las solicitudes está en Frankfurt (Unión Europea).</li>
-    <li><strong>Supabase</strong> (Supabase, Inc., EE. UU.): la base de datos donde guardo las solicitudes y las conversaciones.</li>
-    <li><strong>Resend</strong> (EE. UU.): envía y recibe los emails (la confirmación, mis respuestas y las tuyas).</li>
-    <li><strong>Google</strong>: recibo en Gmail los avisos de solicitudes nuevas. Además, esta web carga sus tipos de letra desde Google Fonts, así que tu navegador se conecta a servidores de Google, que reciben tu dirección IP.</li>
-    <li><strong>WhatsApp</strong> (Meta), solo si eliges contactarme por ahí.</li>
-  </ul>
-  <p>Algunos son empresas de Estados Unidos. Cuando tus datos salen de la Unión Europea, se hace con las garantías que exige el RGPD, como las cláusulas contractuales tipo de la Comisión Europea o el Marco de Privacidad de Datos UE-EE. UU.</p>
-
-  <h2>7. Cookies</h2>
-  <p>Esta web <strong>no usa cookies</strong> ni herramientas de analítica o de publicidad.</p>
-
-  <h2>8. Tus derechos</h2>
-  <p>Puedes pedirme en cualquier momento ver tus datos, corregirlos, borrarlos, limitar su uso, oponerte a que los use o llevártelos, y retirar tu consentimiento. Escríbeme a <a href="mailto:berbkarim@gmail.com">berbkarim@gmail.com</a> diciéndome qué quieres. Te contestaré en un mes como mucho; si no tengo claro que eres tú, puede que te pida algo para comprobarlo.</p>
-  <p>Si crees que no he tratado bien tus datos, puedes reclamar ante la <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos</a>.</p>
-
-  <h2>9. Seguridad</h2>
-  <p>Todas las conexiones van cifradas (HTTPS). Los datos se guardan en una base de datos a la que no se puede entrar desde internet, y solo yo los veo, desde un panel protegido con contraseña.</p>
-
-  <h2>10. Menores y cambios</h2>
-  <p>Trabajo con negocios y profesionales. Mis servicios no están pensados para menores de 14 años.</p>
-  <p>Si cambio esta política, actualizaré aquí la versión y la fecha. Si el cambio es importante y ya tengo tus datos, te avisaré.</p>
-
-  <p class="meta foot">© 2026 DEV BOX · Karim Berb</p>
+  <p class="foot">© 2026 DEV BOX · Versión 2026-09-25.3</p>
 </main>
 </body>
 </html>
